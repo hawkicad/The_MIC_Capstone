@@ -81,3 +81,21 @@ The direction this project will go is highly volatile right now. There are a num
   - Always pull the latest changes from the branch you are branching off from to avoid conflicts
     - use 'git pull origin branch_name'
   - Make sure to regularly communicate with the team to avoid overlapping work and merge conflicts
+
+
+## Environment Configuration
+
+  - Use '.env' files or similar in your codebase
+  - **Do not commit secrets** like API keys to the repo. Instead, use GitHub Secrets
+    a. In GitHub, go to the repo > "Settings" > "Secrets"
+    b. Add secrets like 'DATABASE_URL', 'API_KEY', etc
+    c. In our GitHub Actions workflow, we can use these secrets with '${{secrets.SECRET_NAME}}'
+
+## Database Migrations
+
+  - Use a migration tool such as Node.js
+  - In our CI/CD pipeline (GitHub Actions), after the test step and before we deploy, we should run migrations to ensure the database is updated
+
+## Access Control
+
+  - Only teammembers and project parter should be able to merge into 'qa' and 'main'

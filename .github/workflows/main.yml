@@ -1,0 +1,30 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - qa
+      - main
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # adjust this based on your project's needs
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run linter (assuming you use ESLint)
+      run: npx eslint .
+
+    - name: Run tests
+      run: npm test

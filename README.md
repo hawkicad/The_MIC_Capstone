@@ -2,7 +2,7 @@
 
 ## Project Goal:
 
-The direction this project will go is highly volatile right now. There are a number of potential ideas we have, but nothing has been solidified. With that in mind, this repo has been constructed to house whatever we end up creating. By the sounds of it, we will most likley be creating some sort of custom full-stack solution or an API. Both of these could be made using Node.js, so that is the outline that has been used for setting up the workflow that this project will theoretically follow.
+To create a webscraping/API tool that will reduce the amount of navigation users have to do when attempting to fully comprehend any MIC article. This project will aim to gather all the definitions from the glossary page, host them in a db, and be capable of reproducing any given defintion in a popup when a user hovers over it in an article. The current functionality is that a user has the option to click on a word they may not know or want more clarity on. When they do this it will navigate them to the Glossary page where they can find their desired term. Our goal is to remove the need to leave a page to understand what a term means. Additionally, we want the project to be scalable for a furture team to add to.
 
 ## How CI/CD flow will work
 
@@ -93,8 +93,13 @@ The direction this project will go is highly volatile right now. There are a num
 
 ## Database Migrations
 
-  - Use a migration tool such as Node.js
-  - In our CI/CD pipeline (GitHub Actions), after the test step and before we deploy, we should run migrations to ensure the database is updated
+  - Use a Python-based migration tool such as Flask-Migrate, which is an extension that integrates Alembic with Flask applications. This tool is suitable for handling SQLAlchemy database migrations.
+
+  - Within our CI/CD pipeline (GitHub Actions), it's essential to apply database migrations to ensure the database schema is up-to-date with our codebase:
+
+    1. After the test step and before deployment in the GitHub Actions workflow, include a step to run database migrations.
+    2. Use the command flask db upgrade to apply the migrations to your database.
+    3. Ensure the workflow has the necessary environment variables and database access to perform the migrations successfully.
 
 ## Access Control
 

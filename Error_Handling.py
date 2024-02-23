@@ -1,7 +1,7 @@
 from flask import jsonify
 
 def handleInvalidInput():
-    """Return a response for invalid input."""
+    # Return a response for invalid input.
     return jsonify({"error": "Invalid input"}), 400
 
 def handleDatabaseError(error):

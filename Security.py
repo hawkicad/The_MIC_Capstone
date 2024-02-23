@@ -1,14 +1,6 @@
 import re
 from urllib.parse import urlparse
 
-# This function would setup the security configuration. It is a work in progress
-
-"""
-def setupSecurity():
-    pass
-"""
-
-
 def validateInput(input):
     """Validate input data to prevent injection attacks. Returns True if valid, False otherwise."""
     # Example: Reject input with suspicious characters; customize as needed

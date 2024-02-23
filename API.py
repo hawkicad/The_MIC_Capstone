@@ -1,8 +1,8 @@
-from flask import request, jsonify
+from flask import Flask, request, jsonify
 import database
 import scraper
-#import security
-#import error_handling
+import security
+import error_handling
 
 # These endpoints are drafts of what will be used once we have merged the current drafted code
 # The testing and revisions will be done next week
@@ -10,6 +10,7 @@ import scraper
 def initializeAPIServer(app):
     @app.route('/definition/<word>', methods=['GET'])
     def getDefinitionEndpoint(word):
+        word = word.lower()
         if not security.validateInput(word):
             return error_handling.handleInvalidInput()
         try:
@@ -23,7 +24,7 @@ def initializeAPIServer(app):
 
     @app.route('/update', methods=['POST'])
     def updateGlossaryDatabase():
-        url = request.json.get('url')
+        url = "https://lpi.oregonstate.edu/mic/glossary"
         if not security.validateURL(url):
             return error_handling.handleInvalidInput()
         try:

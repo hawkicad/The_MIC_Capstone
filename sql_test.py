@@ -33,6 +33,7 @@ else:
     # Print all rows
     for row in rows:
   	    print("Data row = (%s, %s)" %(str(row[0]), str(row[1])))
+           
     # Cleanup
     conn.commit()
     cursor.close()

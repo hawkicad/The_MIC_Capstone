@@ -22,7 +22,7 @@ def initializeAPIServer(app):
         except Exception as e:
             return error_handling.handleDatabaseError(e)
 
-    @app.route('/update', methods=['POST'])
+    @app.route('/update', methods=['GET'])
     def updateGlossaryDatabase():
         url = "https://lpi.oregonstate.edu/mic/glossary"
         if not security.validateURL(url):

@@ -1,10 +1,12 @@
 import mysql.connector
 from mysql.connector import errorcode
 
+# Removed the user and password as the database is no longer available.
+# The database setup document is a good reference for how to create another one that would work the same
 config = {
     'host': 'mictestdb.mysql.database.azure.com',
-    'user': 'c_hawk7397',
-    'password': 'm1(|<3yM0i_i53',
+    'user': 'databaseUser',
+    'password': 'databasePassword',
     'database': 'mictestdb',
     'client_flags': [mysql.connector.ClientFlag.SSL],
     'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'

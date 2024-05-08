@@ -1,0 +1,115 @@
+/*****************************************************************************************
+ * Meta styles
+ ****************************************************************************************/
+ body {
+     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+     font-weight: 400;
+
+     text-rendering: optimizeLegibility;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+
+     /* Source for css color variables:
+      * https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+      */
+     --main-text: #030303;
+     --black-medium: #1B1B1B;
+     --black-light: #5c5c5c;
+     --grey-light: #d3d3d3;
+     --white: #fff;
+     --white-alt: #F0F0F0;
+     --white-dark: #D7D7D7;
+     --white-medium: #E8E8E8;
+     --accent: #16d27a;
+
+     margin: 0;
+     background-color: var(--white-dark);
+ }
+
+ main {
+    margin: 0px 120px;
+    padding: 2em;
+
+    @media (max-width: 900px) {
+        margin: 0px 20px;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;                              /*! Gap may be too much */
+
+    background-color: var(--white);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+
+    h1 {
+        margin: 0.2em;
+    }
+}
+
+/*! Consider going back to default paragraph margins */
+p {
+    margin: 0;
+}
+
+
+/*****************************************************************************************
+ * Navigation bar
+ ****************************************************************************************/
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    font-size: 28px;
+    line-height: 32px;
+    height: 65px;
+
+    background-color: var(--white-alt);
+
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 0;
+    padding: 0;
+}
+
+nav li a {
+    color: var(--main-text);
+    text-decoration: none;
+    padding: 16.5px 20px;
+    vertical-align: middle;
+
+    @media (max-width: 900px) {
+        padding: 12px 8px;
+    }
+}
+
+nav li a:hover {
+    background-color: var(--black-light);
+}
+
+nav li a.active {
+    /* text-decoration: 4px underline var(--accent); */
+    border-bottom: 4px solid var(--accent);
+}
+
+/*****************************************************************************************
+ * Content
+ ****************************************************************************************/

@@ -1,9 +1,46 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./index.css" rel="stylesheet"/>
 
-<h1>MICBridge</h1>
-<p>Landing page</p>
+    <title>MICBridge</title>
+</head>
+<body>
+    <div class="title">
+        <h1>MICBridge</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a class="active" href="./">About</a></li>
+            <li><a href="./research.html">UX Research</a></li>
+            <li><a href="./solutions.html">Custom Solutions</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <p>
+            The Micronutrient Information Center (MIC) is an organization that provides high quality information
+            and research on micronutrients through their website.
+            This project focused on improving the user experience of the website by understanding the current
+            users--and ultimately implementing some solutions through code.
+        </p>
+        <p>
+            To learn about our users and issues within the website, we conducted some cognitive walkthroughs--putting
+            ourselves in the user's shoes-and ran some user surveys.
+            Using this information we designed several prototypes for the improved website.
+        </p>
+        <p>
+            One usability issue we focused on was how users seeking a definition to a key word were redirected to a
+            different 'glossary' page, making the experience inconvenient.
+            We developed an API to address this by storing definitions of the glossary page in a SQL database.
+            Then, we made a website feature to provide definitions whenever terms were hovered over, as opposed to
+            redirecting the user to the glossary page.
+        </p>
+
+    </main>
 
 </body>
+
 </html>

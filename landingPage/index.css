@@ -51,6 +51,12 @@
     }
 }
 
+.image{
+    width: 100%;
+    padding: 10px;
+}
+
+
 /*! Consider going back to default paragraph margins */
 p {
     margin: 0;

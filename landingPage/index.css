@@ -86,7 +86,7 @@
     margin: 10;    
 
   }
-  .img{
+  img{
     object-fit: contain;
   }
 /*! Consider going back to default paragraph margins */

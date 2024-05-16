@@ -20,20 +20,40 @@
     </nav>
 
     <main>
-        <p>
-            SOLUTIONS.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut a facere illum perspiciatis, rem sapiente? Quibusdam sit earum temporibus odit veniam, harum ut autem praesentium perspiciatis! Quos nemo dolorem enim.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut a facere illum perspiciatis, rem sapiente? Quibusdam sit earum temporibus odit veniam, harum ut autem praesentium perspiciatis! Quos nemo dolorem enim.
-        </p>
-        <div>
-            <img src="images/CurrentFunctionality.jpg" alt="Current Functionality of the MIC Website">
-            <p id="caption">Current Functionality of the MIC website- definitions for terms are only accessible via a seperate glossary page.</p>
-        </div>
-        <div>
-            <img src="images/DesiredFunctionality.jpg" alt="Desired Functionality of the MIC Website">
-            <p id="caption">Desired Functionality of the MIC website- definitions for terms appear on hover.</p>
-        </div>
-
+        <div class ="main-container">
+            <div class="table-container">
+                <div class="table-row">
+                    <div class="row-item">
+                        <img src="images/CurrentFunctionality.jpg" alt="Current Functionality of the MIC Website">
+                    </div>
+                    <div class="row-item"
+                    style="border-left:1px solid #dadada;">
+                        <img src="images/DesiredFunctionality.jpg" alt="Desired Functionality of the MIC Website">
+                    </div>
+                    
+                </div>   
+                <div class="table-row">
+                    <div class="row-item">
+                        <p id="caption">Current Functionality of the MIC website- definitions for terms are only accessible via a seperate glossary page.</p>
+                    </div>
+                    <div class="row-item"
+                    style="border-left:1px solid #dadada;">
+                        <p id="caption">Desired Functionality of the MIC website- definitions for terms appear on hover.</p>
+                    </div>
+                    
+                </div>
+            </div>  
+        </div>    
+            <p>
+                The 'MICBridge' API is a comprehensive web scraping and content enhancement tool that is meant to bridge the gap between dynamic user engagement and static content. 
+                We developed it to target an existing usability issue with the MIC site, where users seeking definitions of key terms are redirected to a separate page.
+                The API periodically scrapes MIC’s glossary page to retrieve and update the MySQL database with the most up-to-date set of definitions. 
+                The database serves as the backbone for the MICBridge, which is made accessible to the MIC site through injected JavaScript code. 
+                Through endpoints offered by the API, the MIC has real-time definition retrieval, which are displayed in neatly styled pop-ups whenever a user hovers over linked glossary terms in an article (Fig. 4). 
+                Our solution improves the reader experience and promotes learning by reducing time to understanding and navigation.
+            </p>
+    
+        
     </main>
 </body>
 

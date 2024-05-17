@@ -4,10 +4,10 @@ from mysql.connector import errorcode
 # Removed the user and password as the database is no longer available.
 # The database setup document is a good reference for how to create another one that would work the same
 config = {
-    'host': 'micglossarydatabase.mysql.database.azure.com',
-    'user': 'MIC_Admin',
-    'password': 'M1(1<3yM0u$e',
-    'database': 'micglossarydb',
+    'host': 'databaseHostname',
+    'user': 'admin_user',
+    'password': 'admin_password',
+    'database': 'database_name',
     'client_flags': [mysql.connector.ClientFlag.SSL],
     'ssl_ca': 'DigiCertGlobalRootCA.crt.pem'
 }

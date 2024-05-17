@@ -6,6 +6,24 @@
     <link href="./index.css" rel="stylesheet"/>
 
     <title>MICBridge | Custom Solutions </title>
+
+    <style>
+        #glossary-popup {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            max-width: 200px;
+        }
+        .glossary-term {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="title">
@@ -45,16 +63,88 @@
             </div>  
         </div>    
             <p>
-                The 'MICBridge' API is a comprehensive web scraping and content enhancement tool that is meant to bridge the gap between dynamic user engagement and static content. 
+                The 'MICBridge' 
+                <span class="glossary-term" data-definition="An API, or application programming interface, is a set of rules or protocols that enables software applications to communicate with each other to exchange data, features and functionality.">API</span> 
+                is a comprehensive web scraping and content enhancement tool that is meant to bridge the gap between dynamic user engagement and static content. 
                 We developed it to target an existing usability issue with the MIC site, where users seeking definitions of key terms are redirected to a separate page.
-                The API periodically scrapes MIC’s glossary page to retrieve and update the MySQL database with the most up-to-date set of definitions. 
+                The API periodically 
+                <span class="glossary-term" data-definition="The process of using software to extract data and content from websites.">scrapes</span> 
+                MIC’s glossary page to retrieve and update the 
+                <span class="glossary-term" data-definition="An open-source relational database management system. Its name is a combination of 'My', the name of co-founder Michael Widenius's daughter My, and 'SQL', the acronym for Structured Query Language.">MySQL</span> database with the most up-to-date set of definitions. 
                 The database serves as the backbone for the MICBridge, which is made accessible to the MIC site through injected JavaScript code. 
-                Through endpoints offered by the API, the MIC has real-time definition retrieval, which are displayed in neatly styled pop-ups whenever a user hovers over linked glossary terms in an article (Fig. 4). 
+                Through 
+                <span class="glossary-term" data-definition="A specific location within an API that accepts requests and sends back responses.">endpoints</span> 
+                offered by the API, the MIC has real-time definition retrieval, which are displayed in neatly styled pop-ups whenever a user hovers over linked glossary terms in an article (Fig. 4). 
                 Our solution improves the reader experience and promotes learning by reducing time to understanding and navigation.
+            </p>
+
+            <p>
+                As the Micronutrient Information Center (MIC) plans its transition to 
+                <span class="glossary-term" data-definition="A free and open-source web content management system written in PHP and distributed under the GNU General Public License.">Drupal</span>
+                 10, the foundational architecure of the MICBridge positions it as a 
+                 <span class="glossary-term" data-definition="A system's ability to handle varying workloads as the needs of your business change.">scalable</span>
+                  and adaptable
+                solution that can be extended beyond its current implementation. The existing functionality, focused on enhancing the user interaction with dynamic pop-ups for glossary terms,
+                is just the beginning of what could become a multi-faceted tool tailored to a variety of eductional informational needs on the MIC.
+            </p>
+
+            <p>
+                Future developments could see the MICBridge extending its capabilities to integrate more deeply with various content segments of the MIC. For example, the API could be adapted to
+                provide 
+                <span class="glossary-term" data-definition="Short citations that appear within the text of a written work to indicate sources that have been quoted or paraphrased.">inline references</span>
+                 , nutritional data insights, or interactive content summaries directly within articles or research papers. This would not only 
+                 <span class="glossary-term" data-definition="To make simpler or more efficient. a system that streamlines the process.">streamline</span>
+                  the user experience
+                but also enhance the site's educational value by providing immediate access to a broader range of information without the need for navigating away from the current reading material.
+            </p>
+
+            <p>
+                The potential for MICBridge to support additional services also opens up opportunities for customizability and porsonalization within the MIC. Future iterations could include user-specific
+                content curation where the API 
+                <span class="glossary-term" data-definition="Code that is modified or generated at runtime, rather than being fixed at compile-time.">dynamically</span>
+                 adjusts the information presented based on individual user preferences or past interactions. Such personalized experiences could significatnly enhance
+                user engagement and satisfaction, fostering a deeper connection to the site's content.
             </p>
     
         
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const glossaryTerms = document.querySelectorAll('.glossary-term');
+
+            glossaryTerms.forEach(term => {
+                term.addEventListener('mouseover', function(event) {
+                    const definition = this.dataset.definition;
+                    showPopup(this, definition);
+                });
+
+                term.addEventListener('mouseout', function() {
+                    hidePopup();
+                });
+            });
+
+            function showPopup(element, definition) {
+                let popup = document.getElementById('glossary-popup');
+                if (!popup) {
+                    popup = document.createElement('div');
+                    popup.id = 'glossary-popup';
+                    document.body.appendChild(popup);
+                }
+                popup.textContent = definition;
+                popup.style.display = 'block';
+                popup.style.left = `${element.getBoundingClientRect().left}px`;
+                popup.style.top = `${element.getBoundingClientRect().bottom + window.scrollY}px`;
+            }
+
+            function hidePopup() {
+                const popup = document.getElementById('glossary-popup');
+                if (popup) {
+                    popup.style.display = 'none';
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

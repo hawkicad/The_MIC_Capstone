@@ -1,45 +1,55 @@
 /*****************************************************************************************
  * Meta styles
  ****************************************************************************************/
- body {
-     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-     font-weight: 400;
+body {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 400;
 
-     text-rendering: optimizeLegibility;
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-     /* Source for css color variables:
+    /* Source for css color variables:
       * https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
       */
-     --main-text: #030303;
-     --black-medium: #1B1B1B;
-     --black-light: #5c5c5c;
-     --grey-light: #d3d3d3;
-     --white: #fff;
-     --white-alt: #F0F0F0;
-     --white-dark: #D7D7D7;
-     --white-medium: #E8E8E8;
-     --accent: #16d27a;
+    --main-text: #030303;
+    --black-medium: #1B1B1B;
+    --black-light: #5c5c5c;
+    --grey-light: #d3d3d3;
+    --white: #fff;
+    --white-alt: #F0F0F0;
+    --white-dark: #D7D7D7;
+    --white-medium: #E8E8E8;
+    --accent: #16d27a;
 
-     margin: 0;
-     background-color: var(--white-dark);
- }
+    margin: 0;
+    background-color: var(--white-dark);
 
- main {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
     margin: 0px 120px;
     padding: 2em;
+
 
     @media (max-width: 900px) {
         margin: 0px 20px;
     }
 
+    background-color: var(--white);
+}
+
+.content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;                              /*! Gap may be too much */
+    gap: 10px;
+}
 
-    background-color: var(--white);
+.bold {
+    font-weight: 600;
 }
 
 .title {
@@ -48,34 +58,37 @@
 
     h1 {
         margin: 0.2em;
+
+        @media (max-width: 900px) {
+            font-size: 26px;
+        }
     }
 }
 
 
-
 .main-container {
     width: 100%;
-    height: 100%;
     display: flex;
     margin: 10;
     justify-content: center;
     align-items: center;
 }
+
 .table-container {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
     width: 100%;
     margin: 0 auto;
-  }
-  .table-row {
+}
+
+.table-row {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
+}
 
-    
-  }
-  .row-item {
+.row-item {
     width: 100%;
     display: flex;
     flex-shrink: 1;
@@ -83,43 +96,69 @@
     padding: 12px;
     justify-content: center;
     align-items: center;
-    margin: 10;    
+    margin: 10;
 
-  }
-  img{
+}
+
+img {
     object-fit: contain;
-  }
-/*! Consider going back to default paragraph margins */
+}
+
+
 p {
     margin: 0;
 }
-img{
+
+h2, ul {
+    margin: 0.4em 0;
+}
+
+
+img {
     max-width: 100%;
     max-height: 100%
-    }
+}
+
+.divider {
+    width: 100%;
+    border-top: 2px solid var(--accent);
+}
+
+.video {
+    margin: 20px;
+}
 
 /*****************************************************************************************
  * Navigation bar
  ****************************************************************************************/
 nav {
+    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 100;
 
     font-size: 28px;
     line-height: 32px;
-    height: 65px;
+    height: 2em;
+
+    @media (max-width: 900px) {
+        height: 1.5em;
+    }
 
     background-color: var(--white-alt);
 
     display: flex;
     justify-content: center;
+
+    overflow: hidden;
 }
 
 nav li {
     box-sizing: border-box;
     display: flex;
     align-items: center;
+
+    height: 100%;
 }
 
 nav ul {
@@ -132,13 +171,14 @@ nav ul {
 }
 
 nav li a {
+    box-sizing: border-box;
     color: var(--main-text);
     text-decoration: none;
-    padding: 16.5px 20px;
-    vertical-align: middle;
+    padding: 12px 20px;
 
     @media (max-width: 900px) {
-        padding: 12px 8px;
+        font-size: 22px;
+        padding: 5px 12px;
     }
 }
 

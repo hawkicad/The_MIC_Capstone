@@ -60,7 +60,7 @@ main {
         margin: 0.2em;
 
         @media (max-width: 900px) {
-            font-size: 26px;
+            font-size: 24px;
         }
     }
 }
@@ -92,12 +92,11 @@ main {
     width: 100%;
     display: flex;
     flex-shrink: 1;
-    font-size: 14px;
+    font-size: 16px;
     padding: 12px;
     justify-content: center;
     align-items: center;
     margin: 10;
-
 }
 
 img {
@@ -116,9 +115,13 @@ h2, ul {
 figure {
     display: flex;
     flex-flow: column wrap;
+
     img {
-        height: 350px;
         object-fit: contain;
+
+        @media (min-width: 900px) {
+            height: 450px;
+        }
     }
 }
 
@@ -143,7 +146,6 @@ img {
  * Navigation bar
  ****************************************************************************************/
 nav {
-    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -165,7 +167,6 @@ nav {
 }
 
 nav li {
-    box-sizing: border-box;
     display: flex;
     align-items: center;
 
@@ -188,7 +189,7 @@ nav li a {
     padding: 12px 20px;
 
     @media (max-width: 900px) {
-        font-size: 22px;
+        font-size: 18px;
         padding: 5px 12px;
     }
 }
@@ -198,7 +199,6 @@ nav li a:hover {
 }
 
 nav li a.active {
-    /* text-decoration: 4px underline var(--accent); */
     border-bottom: 4px solid var(--accent);
 }
 

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./index.css" rel="stylesheet"/>
+    <link href="./index.css" rel="stylesheet" />
 
     <title>MICBridge | UX Research </title>
 </head>
@@ -31,10 +32,8 @@
                 </p>
 
                 <figure>
-                    <img
-                        src="images/uxTeamProcess.png"
-                        alt="Diagram of process UX team took to understand users' experience."
-                        >
+                    <img src="images/uxTeamProcess.png"
+                        alt="Diagram of process UX team took to understand users' experience.">
                 </figure>
             </div>
 
@@ -42,18 +41,17 @@
                 <h2>GenderMag Cognitive walkthroughs</h2>
                 <p>
                     GenderMag provides a systematic way to accomplish this and can map usability bugs to
-                    a user's problem-solving style, called <span class="bold">Facets</span> to better understand why it is an issue.
+                    a user's problem-solving style, called <span class="bold">Facets</span> to better understand why it
+                    is an issue.
                     In the below figure, we have customized the Abi persona who has fixed Facet values such as
                     Information Processing Style which refers to how Abi processes information by gathering as much
                     as possible before taking an action compared to a selective style (first promising information).
                 </p>
                 <figure>
-                    <img
-                    src="images/customAbiAbridged.png"
-                    alt="Snippet of Abi persona with customizations to suit MIC's use cases."
-                    >
+                    <img src="images/customAbiAbridged.png"
+                        alt="Snippet of Abi persona with customizations to suit MIC's use cases.">
                     <caption>
-                        Fig. Snippet of Abi persona with customizations to suit MIC's use cases.
+                        Snippet of Abi persona with customizations to suit MIC's use cases.
                         This was the persona used in the cognitive walkthroughs.
                     </caption>
                 </figure>
@@ -78,18 +76,132 @@
                             Will [persona] do this? Why?
                         </li>
                         <li><span class="bold">Post-Action</span>:
-                            If [persona] does this, will they know they did the right thing and are making progress toward their goal? Why?
+                            If [persona] does this, will they know they did the right thing and are making progress
+                            toward their goal? Why?
                         </li>
                     </ul>
                 </ul>
             </div>
 
             <div class="section divider">
-                <h2>Designing Fixes and Takeaways</h2>
-                <p>[Work in Progress]</p>
-            </div>
-        </div>
+                <h2>Designing Fixes</h2>
+                <p>
+                    After running 2 walkthrough sessions,
+                    we found 8 bugs and a separate discussion led us to target an issue with looking up definitions.
+                    Each walkthrough sessions was followed by a fix session where our team and MIC brainstormed Fixes
+                    and then we prototyped them.
+                </p>
+                <table class="regular-table">
+                    <caption>
+                        Table showing 1 of the 8 bugs found across 2 GenderMag sessions.
+                        Bugs shown are from the first walkthrough and the use case was "Find colorectal cancer
+                        information (within Health and Disease Index). Look up nutrients that may be involved in
+                        progression/treatment."
+                    </caption>
+                    <tr>
+                        <th>Viewing</th>
+                        <th>Subgoal</th>
+                        <th>Action</th>
+                        <th>Facets</th>
+                        <th>Critique</th>
+                    </tr>
+                    <tr>
+                        <td>Top of Colorectal Cancer Page</td>
+                        <td>#2 Finding specific information on prevention/treatment</td>
+                        <td>(1a) Scroll Down</td>
+                        <td>Attitude Towards Risk</td>
+                        <td>
+                            The information at the top doesn't match goals (keywords for treatment/prevention not seen;
+                            not in sidebar). </br>
+                            Not descriptive enough about where you are or what the article is about. </br>
+                            Regarding format the layout makes the title disappear and low contrast. </br>
+                            Summary is unproductive </br>
+                            …
+                        </td>
+                    </tr>
+                </table>
 
+                <table class="before-after">
+                    <tr>
+                        <td>
+                            <img src="images/bug3Before.png" height="350" alt="Bug before">
+                        </td>
+                        <td>
+                            <img src="images/bug3After.png" height="350" alt="Bug after">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="short-table-data">
+                            <span class="bold">Bug before:</span>
+                            The title not being aligned with the content as well as the summary confused Abi (a user)
+                            on what page they are on.
+                        </td>
+                        <td class="short-table-data">
+                            <span class="bold">Bug after:</span>
+                            The prototype design focuses on the main content and uses breadcrumbs to better guide the
+                            user.
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+            <div class="section divider">
+                <h2>Takeaways</h2>
+                <p>
+                    We summarize our findings by listing out key guidelines for the MIC website based onprevious
+                    usability evaluations and the bugs found
+                    and also connecting them to <a
+                        href="https://www.nngroup.com/articles/ten-usability-heuristics/">Jakob Nielsen's 10 Usability
+                        heuristics</a>.
+                    Usability heuristics are principles designers follow to improve the user experience, they are
+                    treated as a rule of thumb (not absolute).
+                </p>
+                <ul>
+                    <li>
+                        #1: Visibility of System Status
+                        <ul>
+                            <li>Let the user know where they are at any point in time within the system</li>
+                        </ul>
+                    </li>
+                    <li>
+                        #2: Match between the System and the Real World
+                        <ul>
+                            <li>Use simpler words, phrases to explain concepts to the user</li>
+                        </ul>
+                    </li>
+                    <li>
+                        #4: Consistency and Standards
+                        <ul>
+                            <li>Make directions clear for the user to follow along while navigating</li>
+                        </ul>
+                    </li>
+                    <li>
+                        #7: Flexibility and Efficiency of Use
+                        <ul>
+                            <li>Both first-time and returning users should be able to efficiently navigate through the
+                                site</li>
+                        </ul>
+                    </li>
+                    <li>
+                        #6: Recognition rather than Recall
+                        <ul>
+                            <li>Use familiar features to the user or keep elements consistent with other systems</li>
+                        </ul>
+                    </li>
+                    <li>
+                        #8: Aesthetic and Minimalist Design
+                        <ul>
+                            <li>Visual cues for the user to get the desired page with the information that they were
+                                looking for</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
     </main>
 </body>
 

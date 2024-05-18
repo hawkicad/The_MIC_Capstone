@@ -205,3 +205,36 @@ nav li a.active {
 /*****************************************************************************************
  * Content
  ****************************************************************************************/
+.regular-table {
+    margin-top: 1em;
+    border-collapse: collapse;
+    border: 1px solid var(--grey-light);
+
+    th {
+        background-color: var(--grey-light);
+    }
+
+    td {
+        border: 1px solid var(--grey-light);
+    }
+    caption {
+        padding: 0 2em;
+        text-align: left;
+    }
+}
+
+.before-after {
+    margin-top: 2em;
+    border-collapse: collapse;
+    td + td {
+        border-left: 2px solid var(--grey-light);
+    }
+    td {
+        text-align: center;
+        padding: 4px 1em;
+    }
+    caption {
+        padding-left: 2em;
+        text-align: left;
+    }
+}

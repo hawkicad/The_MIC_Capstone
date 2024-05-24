@@ -80,6 +80,8 @@ main {
     background-color: white;
     width: 100%;
     margin: 0 auto;
+
+    overflow: scroll;
 }
 
 .table-row {
@@ -190,7 +192,12 @@ nav li a {
 
     @media (max-width: 900px) {
         font-size: 18px;
-        padding: 5px 12px;
+        padding: 4px 12px;
+    }
+
+    @media (max-width: 360px) {
+        font-size: 16px;
+        font-weight: 550;
     }
 }
 
@@ -236,5 +243,11 @@ nav li a.active {
     caption {
         padding-left: 2em;
         text-align: left;
+    }
+}
+
+object {
+    @media (max-width: 900px) {
+        height: 360px;
     }
 }
